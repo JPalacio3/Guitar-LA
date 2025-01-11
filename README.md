@@ -27,6 +27,7 @@ Aplicación web de una tienda de guitarras desarrollada con React, TypeScript y 
 ## 📁 Estructura del Proyecto
 
 ```plaintext
+
 guitarla-ts/
 ├── public/
 │   └── img/            # Imágenes de guitarras
@@ -37,6 +38,13 @@ guitarla-ts/
 │   ├── types/          # Interfaces TypeScript
 │   ├── App.tsx         # Componente principal
 │   └── main.tsx        # Punto de entrada
+├── .eslintrc.js        # Configuración de ESLint
+├── index.html          # Archivo HTML principal
+├── package.json        # Dependencias y scripts del proyecto
+├── README.md           # Documentación del proyecto
+├── tsconfig.json       # Configuración de TypeScript
+└── vite.config.ts      # Configuración de Vite
+
 ```
 ## ⚙️ Instalación
 
