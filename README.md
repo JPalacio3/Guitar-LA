@@ -68,7 +68,7 @@ npm run build
 * Persistencia en localStorage
 * Cálculo automático de totales
 
-💻 Desarrollo
+## 💻 Desarrollo
 * TypeScript para mejor desarrollo
 * Componentes reutilizables
 * Gestión de estado con useReducer
