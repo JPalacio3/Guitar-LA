@@ -37,7 +37,7 @@ guitarla-ts/
 │   ├── types/          # Interfaces TypeScript
 │   ├── App.tsx         # Componente principal
 │   └── main.tsx        # Punto de entrada
-
+```
 ## ⚙️ Instalación
 
 1. Clonar repositorio:
