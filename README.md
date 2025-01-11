@@ -44,11 +44,6 @@ guitarla-ts/
 ├── README.md           # Documentación del proyecto
 ├── tsconfig.json       # Configuración de TypeScript
 └── vite.config.ts      # Configuración de Vite
-<<<<<<< HEAD
-
-```
-=======
->>>>>>> 6a6a17e5df2b9dbcb02346641166c6bdbdf67cb0
 
 ```
 ## ⚙️ Instalación
