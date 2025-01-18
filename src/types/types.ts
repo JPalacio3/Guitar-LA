@@ -57,7 +57,7 @@ export interface GuitarProps {
 
 export type HeaderProps = {
 	cart: CartItem[];
-	removeFromCart: (id: Guitar['id']) => void;
+	dispatch: React.Dispatch<CartActions>;
 	decreaseQuantity: (id: Guitar['id']) => void;
 	increaseQuantity: (id: Guitar['id']) => void;
 	clearCart: () => void;

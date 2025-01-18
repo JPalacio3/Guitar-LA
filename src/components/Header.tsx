@@ -3,7 +3,7 @@ import { useMemo } from 'react';
 
 export default function Header({
 	cart,
-	removeFromCart,
+	dispatch,
 	decreaseQuantity,
 	increaseQuantity,
 	clearCart,
@@ -82,7 +82,12 @@ export default function Header({
 															<button
 																className="btn btn-danger"
 																type="button"
-																onClick={() => removeFromCart(guitar.id)}>
+																onClick={() =>
+																	dispatch({
+																		type: 'remove-from-cart',
+																		payload: { id: guitar.id },
+																	})
+																}>
 																X
 															</button>
 														</td>
