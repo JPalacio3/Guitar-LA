@@ -3,14 +3,15 @@ declarar por medio de types o interfaces
 */
 
 import Guitar from '../components/Guitar';
+import { CartActions } from '../reducers/cart-reducers';
 
 // uso de interface
 export interface Guitar {
-  id: number;
-  name: string;
-  image: string;
-  description: string;
-  price: number;
+	id: number;
+	name: string;
+	image: string;
+	description: string;
+	price: number;
 }
 
 // uso de type
@@ -25,7 +26,7 @@ export interface Guitar {
 
 // Aplicación de herencia usando Interface:
 export interface CartItem extends Guitar {
-  quantity: number;
+	quantity: number;
 }
 
 /*
@@ -50,16 +51,14 @@ export type CartItem = Omit<Guitar, 'id' | 'name' | 'price'> & {
 export type GuitarID = Guitar['id'];
 
 export interface GuitarProps {
-  guitar: Guitar;
-  addToCart: (item: Guitar) => void;
+	guitar: Guitar;
+	dispatch: React.Dispatch<CartActions>;
 }
 
 export type HeaderProps = {
-  cart: CartItem[];
-  removeFromCart: (id: Guitar['id']) => void;
-  decreaseQuantity: (id: Guitar['id']) => void;
-  increaseQuantity: (id: Guitar['id']) => void;
-  clearCart: () => void;
-  isEmpty: boolean;
-  cartTotal: number;
+	cart: CartItem[];
+	removeFromCart: (id: Guitar['id']) => void;
+	decreaseQuantity: (id: Guitar['id']) => void;
+	increaseQuantity: (id: Guitar['id']) => void;
+	clearCart: () => void;
 };
