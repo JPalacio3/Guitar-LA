@@ -1,13 +1,7 @@
 import { HeaderProps } from '../types/types';
 import { useMemo } from 'react';
 
-export default function Header({
-	cart,
-	dispatch,
-	decreaseQuantity,
-	increaseQuantity,
-	clearCart,
-}: HeaderProps) {
+export default function Header({ cart, dispatch }: HeaderProps) {
 	// State Derivado
 	const isEmpty = useMemo(() => cart.length === 0, [cart]);
 	const cartTotal = useMemo(
@@ -67,14 +61,24 @@ export default function Header({
 															<button
 																type="button"
 																className="btn btn-dark"
-																onClick={() => decreaseQuantity(guitar.id)}>
+																onClick={() =>
+																	dispatch({
+																		type: 'decrease-quantity',
+																		payload: { id: guitar.id },
+																	})
+																}>
 																-
 															</button>
 															{guitar.quantity}
 															<button
 																type="button"
 																className="btn btn-dark"
-																onClick={() => increaseQuantity(guitar.id)}>
+																onClick={() =>
+																	dispatch({
+																		type: 'increase-quantity',
+																		payload: { id: guitar.id },
+																	})
+																}>
 																+
 															</button>
 														</td>
@@ -104,7 +108,9 @@ export default function Header({
 
 								<button
 									className="btn btn-dark w-100 mt-3 p-2"
-									onClick={clearCart}>
+									onClick={() => {
+										dispatch({ type: 'clear-cart' });
+									}}>
 									Vaciar Carrito
 								</button>
 							</div>

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import type { CartItem, GuitarID } from '../types/types';
+import type { CartItem } from '../types/types';
 
 export const useCart = () => {
 	const initialCart = (): CartItem[] => {
@@ -9,38 +9,9 @@ export const useCart = () => {
 
 	const [cart, setCart] = useState(initialCart);
 
-	const MIN_ITEMS = 1;
-	const MAX_ITEMS = 5;
-
 	useEffect(() => {
 		localStorage.setItem('cart', JSON.stringify(cart));
 	}, [cart]);
-
-	function decreaseQuantity(id: GuitarID) {
-		const updatedCart = cart.map((item) => {
-			if (item.id === id && item.quantity > MIN_ITEMS) {
-				return {
-					...item,
-					quantity: item.quantity - 1,
-				};
-			}
-			return item;
-		});
-		setCart(updatedCart);
-	}
-
-	function increaseQuantity(id: GuitarID) {
-		const updatedCart = cart.map((item) => {
-			if (item.id === id && item.quantity < MAX_ITEMS) {
-				return {
-					...item,
-					quantity: item.quantity + 1,
-				};
-			}
-			return item;
-		});
-		setCart(updatedCart);
-	}
 
 	function clearCart() {
 		setCart([]);
@@ -48,8 +19,6 @@ export const useCart = () => {
 
 	return {
 		cart,
-		decreaseQuantity,
-		increaseQuantity,
 		clearCart,
 	};
 };
