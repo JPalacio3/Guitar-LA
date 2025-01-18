@@ -4,6 +4,8 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-4.9-blue.svg)](https://www.typescriptlang.org/)
 [![Bootstrap](https://img.shields.io/badge/Bootstrap-5.2-purple.svg)](https://getbootstrap.com/)
 
+[Visita la aplicación](https://guitar-la-react-reducer.netlify.app/)
+
 ## 📝 Descripción
 
 Aplicación web de una tienda de guitarras desarrollada con React, TypeScript y Bootstrap. Implementa un carrito de compras funcional con persistencia de datos.
